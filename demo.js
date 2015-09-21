@@ -102,7 +102,15 @@ $(function() {
 
 
 
-
+$(function() {
+      $("#file").empty();   
+      $("#file").append('<option value="Yanming_DriveTesting_09-05">Yanming_DriveTesting_09-05</option>'); 
+      $.getJSON('data2/File_Name.json', function(jsonData){ 
+        $.each(jsonData, function(i, v) {
+            $("#file").append('<option value="'+v.name+'">'+v.name+'</option>'); 
+       });
+     });
+})
 
 //---------get file按钮的响应
 $(function() {
